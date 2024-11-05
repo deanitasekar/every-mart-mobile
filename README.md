@@ -9,15 +9,58 @@
 <summary> <strong> Tugas 7: Elemen Dasar Flutter </strong> </summary>
 
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
+Stateless Wdiget adalah widget yang tidak memiliki perubahan internal state selama aplikasi berjalan. Widget ini hanya bersifat statis dan tidak dapat diubah setelah page dibuat. <br>
+Stateful Widget adalah widget yang memiliki perubahan internal state selama app berjalan. Widget ini dapat memberikan respon terhadap perubahan data dan melakukan refresh page untuk memperbarui konten yang ditampilkan pada page tersebut.<br>
+Secara garis besar, Stateless Widget tidak memiliki state yang dapat berubah, sedangkan Stateful Widget memiliki state yang dapat berubah selama aplikasi berjalan. Stateless Widget cocok digunakan untuk page yang static (tidak terjadi refresh page), seperti gambar dan teks, sedangkan Stateful Widget cocok digunakan untuk page yang perlu memberikan respon terhadap request yang dapat menyebabkan perubahan, seperti form. Dalam pengembangan aplikasi Flutter, diperlukan pemilihan widget agar aplikasi dapat berjalan dengan efisien karena setiap widget memiliki karakteristik yang berbeda.
+<hr>
 
 ### Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
+- `MyApp - StatelessWidget`: StatelessWidget yang berfungsi sebagai aplikasi utama
+- `MaterialApp`: Widget untuk kustomisasi dasar aplikasi dengan design Material (title, theme, dan lain-lain)
+- `ThemeData`: Widget untuk mengatur theme aplikasi (font, colorScheme, dan lain-lain)
+- `MyHomePage - StatelessWidget`: StatelessWidget yang berfungsi sebagai home page aplikasi
+- `Scaffold`: Widget untuk kustomisasi struktur dasar page aplikasi (AppBar, body, dan lain-lain)
+- `AppBar`: Widget untuk menampilkan bagian atas page
+- `Text`: Widget untuk menampilkan teks pada page
+- `TextStyle`: Widget kustomisasi tampilan teks (size, color, dan lain-lain)
+- `SingleChildScrollView`: Widget wrapper untuk membuat page dapat di-scroll jika ukurannya melebihi layar
+- `Padding`: Widget untuk mengatur padding/jarak di sekitar widget child
+- `Column`: Widget untuk mengatur widget child dalam kolom vertikal
+- `GridView.count`: Widget untuk mengatur widget child dalam bentuk grid sesuai jumlah baris dan kolom
+- `ItemCard - StatelessWidget`: StatelessWidget untuk menampilkan ItemHomepage
+- `Material`: Widget untuk kustomisasi desain Material pada widget (elevation, color, dan lain-lain)
+- `InkWell`: Widget untuk memberikan respons ketika widget dipencet
+- `SnackBar`: Widget untuk menampilkan pesan sementara kepada User
+- `Container`: Widget ini digunakan untuk mengatur tata letak widget
+- `Center`: Widget untuk mengatur posisi widget child ke tengah
+- `Icon`: Widget untuk menampilkan ikon yang dapat dikustomisasi (size, color, dan lain-lain)
+<hr>
 
 ### Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
+Fungsi dari `setState()` adalah memberitahu framework Flutter mengenai perubahan pada state dari suatu widget. Ketika `setState()` dipanggil, framework Flutter akan melakukan pemanggilan ulang `build()` sehingga tampilan UI akan diperbarui sesuai dengan perubahan yang terjadi. Variabel yang terdampak dari fungsi `setState()` adalah variabel yang berada di dalam State dari `StatefulWidget`. Contoh variabel yang terdampak adalah teks dinamis, kondisi interaktif, dan data dari database.
+<hr>
 
 ### Jelaskan perbedaan antara const dengan final.
+`const` digunakan untuk mendefinisikan variabel yang diatur pada saat kompilasi dan tidak bisa diubah. Nilai pada variabel `const` harus ditentukan saat compile, tidak dapat ditentukan saat runtime. Variabel ini biasanya digunakan untuk variabel yang tidak berubah, seperti warna dan konstanta matematika.<br>
+Contoh:
+```dart
+ItemHomepage("Lihat Daftar Produk", Icons.list, const Color(0xFF2E8B57)),
+```
+`final` digunakan untuk mendefinisikan variabel yang hanya dapat diinisialisasi sekali dan tidak dapat diubah setelahnya. Nilai pada variabel `final` dapat ditentukan saat compile maupun saat runtime. Variabel ini biasanya digunakan untuk variabel yang nilainya tidak berubah saat runtime, tetapi nilainya belum dapat diketahui saat compile, seperti input pengguna atau hasil perhitungan.<br>
+Contoh:
+```dart
+class ItemHomepage {
+    final String name;
+    final IconData icon;
+    final Color color;
+
+    ItemHomepage(this.name, this.icon, this.color);
+}
+```
+Secara keseluruhan, variabel `const` harus diinisialisasi saat compile dan tidak dapat diubah nilainya, sedangkan variabel `final` dapat diinisialiasasi saat compile atau runtime dan hanya dapat diinisialisasi sekali (tidak dapat diubah lagi setelahnya). Penggunaan variabel `const` dan `final` bergantung dengan nilai dari variabel tersebut.
+<hr>
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
-<br>
 
 **Membuat sebuah program Flutter baru dengan tema E-Commerce**
 - Masuk ke direktori lokal dan generate proyek baru pada terminal
@@ -255,4 +298,5 @@ git branch -M main
 git remote add origin https://github.com/deanitasekar/every-mart-mobile.git
 git push -u origin main
 ```
+<hr>
 </details>
