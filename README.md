@@ -9,9 +9,9 @@
 <summary> <strong> Tugas 7: Elemen Dasar Flutter </strong> </summary>
 
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
-Stateless Wdiget adalah widget yang tidak memiliki perubahan internal state selama aplikasi berjalan. Widget ini hanya bersifat statis dan tidak dapat diubah setelah page dibuat. <br>
-Stateful Widget adalah widget yang memiliki perubahan internal state selama app berjalan. Widget ini dapat memberikan respon terhadap perubahan data dan melakukan refresh page untuk memperbarui konten yang ditampilkan pada page tersebut.<br>
-Secara garis besar, Stateless Widget tidak memiliki state yang dapat berubah, sedangkan Stateful Widget memiliki state yang dapat berubah selama aplikasi berjalan. Stateless Widget cocok digunakan untuk page yang static (tidak terjadi refresh page), seperti gambar dan teks, sedangkan Stateful Widget cocok digunakan untuk page yang perlu memberikan respon terhadap request yang dapat menyebabkan perubahan, seperti form. Dalam pengembangan aplikasi Flutter, diperlukan pemilihan widget agar aplikasi dapat berjalan dengan efisien karena setiap widget memiliki karakteristik yang berbeda.
+Stateless Widget adalah widget yang tidak memiliki perubahan internal state selama aplikasi berjalan. Widget ini hanya bersifat statis dan tidak dapat diubah setelah page dibuat. <br>
+Stateful Widget adalah widget yang memiliki perubahan internal state selama aplikasi berjalan. Widget ini dapat memberikan respon terhadap perubahan data dan melakukan refresh page untuk memperbarui konten yang ditampilkan pada page tersebut.<br>
+Secara garis besar, Stateless Widget tidak memiliki state yang dapat berubah, sedangkan Stateful Widget memiliki state yang dapat berubah selama aplikasi berjalan. Stateless Widget cocok digunakan untuk page yang static (tidak terjadi refresh page), seperti gambar dan teks, sedangkan Stateful Widget cocok digunakan untuk page yang perlu memberikan respon terhadap request yang dapat menyebabkan perubahan, seperti form. Dalam pengembangan aplikasi Flutter, diperlukan pemilihan widget yang tepat agar aplikasi dapat berjalan dengan efisien karena setiap widget memiliki karakteristik yang berbeda.
 <hr>
 
 ### Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
@@ -165,7 +165,7 @@ class ItemHomepage {
 ```dart
     final List<ItemHomepage> items = [
         ItemHomepage("Lihat Daftar Produk", Icons.list, const Color(0xFF2E8B57)),
-        ItemHomepage("Tambah Product", Icons.add, const Color(0xFFFF8C00)),
+        ItemHomepage("Tambah Produk", Icons.add, const Color(0xFFFF8C00)),
         ItemHomepage("Logout", Icons.logout, const Color(0xFFFF6347)),
     ];
 ```
@@ -174,8 +174,8 @@ class ItemHomepage {
 ```dart
 class ItemCard extends StatelessWidget {
 
-  final ItemHomepage item; 
-  const ItemCard(this.item, {super.key}); 
+  final ItemHomepage item;
+  const ItemCard(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
