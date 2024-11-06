@@ -57,7 +57,7 @@ class ItemHomepage {
     ItemHomepage(this.name, this.icon, this.color);
 }
 ```
-Secara keseluruhan, variabel `const` harus diinisialisasi saat compile dan tidak dapat diubah nilainya, sedangkan variabel `final` dapat diinisialiasasi saat compile atau runtime dan hanya dapat diinisialisasi sekali (tidak dapat diubah lagi setelahnya). Penggunaan variabel `const` dan `final` bergantung dengan nilai dari variabel tersebut.
+Dapat disimpulkan, variabel `const` harus diinisialisasi saat compile dan tidak dapat diubah nilainya, sedangkan variabel `final` dapat diinisialiasasi saat compile atau runtime dan hanya dapat diinisialisasi sekali (tidak dapat diubah lagi setelahnya). Penggunaan variabel `const` dan `final` bergantung dengan nilai dari variabel tersebut.
 <hr>
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
@@ -65,8 +65,8 @@ Secara keseluruhan, variabel `const` harus diinisialisasi saat compile dan tidak
 **Membuat sebuah program Flutter baru dengan tema E-Commerce**
 - Masuk ke direktori lokal dan generate proyek baru pada terminal
 ```
-flutter create <APP_NAME>
-cd <APP_NAME>
+flutter create every_mart_mobile
+cd every_mart_mobile
 ```
 - Menjalankan proyek melalui terminal
 ```
