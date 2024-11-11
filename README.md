@@ -6,6 +6,114 @@
 <hr>
 
 <details>
+<summary> <strong> Tugas 8: Flutter Navigation, Layouts, Forms, and Input Elements </strong> </summary>
+
+### Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
+`const` digunakan untuk membuat objek yang nilainya tidak akan berubah selama aplikasi berjalan, diinisialisasi saat compile-time, serta hanya dibuat sekali dan disimpan dalam memori.<br>
+Keuntungan menggunakan `const` adalah optimasi performa dengan mengurangi beban memori karena objek hanya dibuat sekali dan meningkatkan kecepatan rendering aplikasi. Selain itu, penggunaan `const` membuat penggunaan memori lebih efisensi dan proses kompilasi lebih cepat. `const` menjamin nilai tidak berubah secara tidak sengaja sehingga memudahkan debugging.<br>
+`const` sebaiknya digunakan pada elemen yang bersifat statis dan nilainya sudah diketahui sebelum di-compile. Penggunaan `const` pada elemen ini akan meningkatkan performa karena widget hanya perlu dibuat sekali dan disimpan dalam memori.
+Contoh:
+```dart
+const Text('Welcome')
+const SizedBox(height: 10)
+const EdgeInsets.all(16.0)
+const Color primaryColor = Colors.blue
+```
+`const` tidak sebaiknya digunakan pada widget yang nilainya berubah saat runtime. Penggunaan `const` pada data dinamis akan menyebabkan error karena bertentangan dengan sifat `const` yang immutable.
+Contoh:
+```dart
+Text(userInput)
+Text(DateTime.now().toString())
+TextField(controller: controller)
+```
+<hr>
+
+### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+![Column](/column.jpg) <br>
+`Column` berfungsi untuk menyusun widget-widget child secara vertikal dari atas ke bawah, dengan main axis yang berjalan vertikal san cross axis horizontal. Contoh implementasi `Column`:
+```dart
+Column(
+  children: <Widget>[
+    Text('Item 1'),
+    Text('Item 2'),
+    Text('Item 3'),
+  ],
+)
+```
+![Row](/row.jpg) <br>
+`Row` digunakan untuk menyusun widget-widget child secara horizontal dari kiri ke kanan, dengan main axis yang berjalan horizontal dan cross axis vertikal. Contoh implementasi `Row`:
+```dart
+Row(
+  children: [
+    Expanded(child: Text('Item 1')),
+    Expanded(child: Text('Item 2')),
+    Expanded(child: Text('Item 3')),
+  ],
+)
+```
+Kedua widget ini dapat dikombinasikan untuk membuat layout yang lebih kompleks. Penggunaan `Column` dan `Row` serta kombinasinya dapat menciptakan layout UI yang fleksibel dan responsif serta kebutuhan aplikasi Flutter. <br>
+Referensi: [Compelling Layout With Flutter Row And Column](https://www.dhiwise.com/post/how-to-create-compelling-layout-with-flutter-row-and-column)
+<hr>
+
+### Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+Pada halamana form yang saya buat, elemen input yang saya gunakan, yaitu:
+- `TextFromField` untuk input dengan 4 field, yaitu nama produk, harga produk, deskripsi produk, dan stock produk
+
+Terdapat beberapa elemen Flutter yang tidak saya gunakan, di antaranya:
+- `Radio` untuk memilih satu opsi dari beberapa pilihan
+- `Checkbox` untuk input boolean
+- `Switch` untuk alternatif dari checkbox dengan tampilan yang berbeda
+- `Slider` untuk memilih nilai dalam rentang tertentu
+- `FileUploadField` untuk mengunggah file
+<hr>
+
+
+### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+Dalam mengembangkan aplikasi Flutter, saya mengimplementasikan tema menggunakan `ThemeData` pada `MaterialApp` yang didefinisikan di `main.dart`. Saya menggunakan `ColorScheme` dengan detail sebagai berikut:
+```dart
+MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+                    primarySwatch: Colors.green,
+        ).copyWith(primary: const Color(0xFF2E8B57), secondary: const Color(0xFFFF8C00), ),
+        useMaterial3: true,
+      ),
+      home: MyHomePage(),
+    );
+```
+<hr>
+
+### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+Saya mengelola navigasi dalam aplikasi dengan banyak halaman pada Flutter menggunakan sistem Navigator dengan 3 metode utama:
+1. Navigator.push()<br>
+  Navigator.push() berfungsi untuk menambahkan halaman baru ke dalam stack dan memungkinkan User kembali ke halaman sebelumnya.
+  ```dart
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+        builder: (context) => const ProductEntryFormPage()),
+  );
+  ```
+2. Navigator.pushReplacement()<br>
+  Navigator.pushReplacement() berfungsi untuk mengganti halaman saat ini dengan halaman baru dan menghapus halaman sebelumnya dari stack.
+  ```dart
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(
+      builder: (context) => MyHomePage(),
+    ));
+  ```
+3. Navigator.pop()<br>
+  Navigator.pop() berfungsi untuk menghapus halaman teratas dari stack dan kembali ke halaman sebelumnya.
+  ```dart
+  Navigator.pop(context);
+  ```
+<hr>
+
+</details>
+
+<details>
 <summary> <strong> Tugas 7: Elemen Dasar Flutter </strong> </summary>
 
 ### Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
