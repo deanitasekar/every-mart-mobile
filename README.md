@@ -11,16 +11,16 @@
 ### Apa kegunaan const di Flutter? Jelaskan apa keuntungan ketika menggunakan const pada kode Flutter. Kapan sebaiknya kita menggunakan const, dan kapan sebaiknya tidak digunakan?
 `const` digunakan untuk membuat objek yang nilainya tidak akan berubah selama aplikasi berjalan, diinisialisasi saat compile-time, serta hanya dibuat sekali dan disimpan dalam memori.<br>
 Keuntungan menggunakan `const` adalah optimasi performa dengan mengurangi beban memori karena objek hanya dibuat sekali dan meningkatkan kecepatan rendering aplikasi. Selain itu, penggunaan `const` membuat penggunaan memori lebih efisensi dan proses kompilasi lebih cepat. `const` menjamin nilai tidak berubah secara tidak sengaja sehingga memudahkan debugging.<br>
-`const` sebaiknya digunakan pada elemen yang bersifat statis dan nilainya sudah diketahui sebelum di-compile. Penggunaan `const` pada elemen ini akan meningkatkan performa karena widget hanya perlu dibuat sekali dan disimpan dalam memori.
-Contoh:
+`const` sebaiknya digunakan pada elemen yang bersifat statis dan nilainya sudah diketahui sebelum di-compile. Penggunaan `const` pada elemen ini akan meningkatkan performa karena widget hanya perlu dibuat sekali dan disimpan dalam memori. <br>
+Contoh penggunaan:
 ```dart
 const Text('Welcome')
 const SizedBox(height: 10)
 const EdgeInsets.all(16.0)
 const Color primaryColor = Colors.blue
 ```
-`const` tidak sebaiknya digunakan pada widget yang nilainya berubah saat runtime. Penggunaan `const` pada data dinamis akan menyebabkan error karena bertentangan dengan sifat `const` yang immutable.
-Contoh:
+`const` sebaiknya tidak digunakan pada widget yang nilainya berubah saat runtime. Penggunaan `const` pada data dinamis akan menyebabkan error karena bertentangan dengan sifat `const` yang immutable. <br>
+Contoh penggunaan:
 ```dart
 Text(userInput)
 Text(DateTime.now().toString())
@@ -85,8 +85,8 @@ MaterialApp(
 <hr>
 
 ### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
-Saya mengelola navigasi dalam aplikasi dengan banyak halaman pada Flutter menggunakan sistem Navigator dengan 3 metode utama:
-1. Navigator.push()<br>
+Saya mengelola navigasi dalam aplikasi dengan banyak halaman pada Flutter menggunakan sistem Navigator dengan 3 metode utama, yaitu:
+1. **Navigator.push()**<br>
   Navigator.push() berfungsi untuk menambahkan halaman baru ke dalam stack dan memungkinkan User kembali ke halaman sebelumnya.
   ```dart
   Navigator.push(
@@ -95,7 +95,7 @@ Saya mengelola navigasi dalam aplikasi dengan banyak halaman pada Flutter menggu
         builder: (context) => const ProductEntryFormPage()),
   );
   ```
-2. Navigator.pushReplacement()<br>
+2. **Navigator.pushReplacement()**<br>
   Navigator.pushReplacement() berfungsi untuk mengganti halaman saat ini dengan halaman baru dan menghapus halaman sebelumnya dari stack.
   ```dart
   Navigator.pushReplacement(
@@ -104,7 +104,7 @@ Saya mengelola navigasi dalam aplikasi dengan banyak halaman pada Flutter menggu
       builder: (context) => MyHomePage(),
     ));
   ```
-3. Navigator.pop()<br>
+3. **Navigator.pop()**<br>
   Navigator.pop() berfungsi untuk menghapus halaman teratas dari stack dan kembali ke halaman sebelumnya.
   ```dart
   Navigator.pop(context);
