@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch(
                     primarySwatch: Colors.green,
-        ).copyWith(primary: const Color(0xFF2E8B57), secondary: const Color(0xFFFF8C00), ),
+        ).copyWith(primary: const Color(0xFF2E8B57), secondary: const Color(0xFFFF8C00)),
         useMaterial3: true,
       ),
       home: MyHomePage(),
