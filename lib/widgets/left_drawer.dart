@@ -1,6 +1,7 @@
 import 'package:every_mart/screens/productentry_form.dart';
 import 'package:flutter/material.dart';
 import 'package:every_mart/screens/menu.dart';
+import 'package:every_mart/screens/list_productentry.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -60,6 +61,18 @@ class LeftDrawer extends StatelessWidget {
                         builder: (context) => const ProductEntryFormPage()),
                   );
                 },
+              ),
+              // Kode ListTile Menu
+              ListTile(
+                  leading: const Icon(Icons.list),
+                  title: const Text('Lihat Daftar Produk'),
+                  onTap: () {
+                      // Route menu ke halaman mood
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ProductEntryPage()),
+                      );
+                  },
               ),
         ],
       ),

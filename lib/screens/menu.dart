@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:every_mart/widgets/left_drawer.dart';
 import 'package:every_mart/widgets/product_card.dart';
 
-
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
