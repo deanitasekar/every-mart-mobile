@@ -50,7 +50,7 @@ Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter
 - User melakukan input data untuk register melalui widget Flutter
 - Data dikirim ke Django untuk dilakukan validasi
 - Django menyimpan data dari User
-- Flutter menampilkan status setelah User melakukan input data
+- Flutter menampilkan status setelah User melakukan input data dan User diarahkan ke halaman login
 
 **Login**
 - User melakukan input data untuk login melalui widget Flutter
