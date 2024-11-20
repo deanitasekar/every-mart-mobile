@@ -30,6 +30,7 @@ Beberapa fungsi dari CookieRequest, yaitu:
   `CookieRequest` menyediakan beberapa metode yang memudahkan interaksi dengan server Django, seperti `login`, `logout`, dan `get`
 - Mendukung CSRF token Django <br>
   `CookieRequest` menangani CSRF token secara otomatis untuk operasi `POST`, `PUT`, dan `DELETE` <br>
+
 Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter melalui `Provider` karena beberapa alasan, yaitu:
 - Menciptakan single source of truth untuk autentikasi, memastikan bahwa semua komponen aplikasi mengakses data sesi yang sama dan konsisten
 - Menghindari pembuatan instance baru di setiap komponen yang membutuhkan akses ke data sesi sehingga User tidak perlu melakukan autentikasi ulang ketika berpindah antar halaman atau menggunakan fitur yang berbeda
