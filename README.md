@@ -16,9 +16,11 @@ Kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSO
   JSON adalah format string yang memerlukan aprsing untuk dapat digunakan dalam aplikasi. Dengan adanya model, proses konversi antara JSON dan objek menjadi lebih mudah dan terstruktur. Hal ini tidak hanya meningkatkan efisiensi, tetapi juga mengurangi kesalahan manipulasi data. <br>
 Jika kita tidak membuat model terlebih dahulu, terdapat kemungkinan terjadi error. Aplikasi menjadi lebih rentan terhadap runtime error seperti `NoSuchMethodError` atau `TypeError`. Selain itu, proses debugging menjadi lebih sulit karena IDE tidak dapat memberikan warning tentang ketidaksesuaian tipe data atau properti yang hilang. Ketika aplikasi berkembang, pengelolaan data tanpa model menjadi semakin kompleks. <br>
 Meskipun ada situasi di mana kita tidak perlu membuat model terlebih dahulu, pengembangan tanpa model tidak direkomendasikan. Penggunaan model dapat meningkatkan maintainability, readability, dan reliability secara signifikan, serta membantu pengembangan aplikasi.
+<hr>
 
 ### Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
-Library HTTP berperan penting untuk menghubungkan antara aplikasi Flutter dan backend Django. Pada implementasi tugas ini, library http fugunakan untuk melakukan berbagai operasi HTTP yang penting dalam aplikasi. Secara spesifik, saya menggunakan library HTTP untuk mengirim request `GET` ke endpoint Django untuk mengambil data produk, melakukan request `POST` untuk proses autentikasi dan registrasi, serta mengirim data form ketika menambahkan produk baru. Library HTTP memiliki kemampuan untuk menangani proses asynchronous, sehingga aplikasi tetap responsif selama proses pertukaran data dengan server berlangsung. 
+Library HTTP berperan penting untuk menghubungkan antara aplikasi Flutter dan backend Django. Pada implementasi tugas ini, library http fugunakan untuk melakukan berbagai operasi HTTP yang penting dalam aplikasi. Secara spesifik, saya menggunakan library HTTP untuk mengirim request `GET` ke endpoint Django untuk mengambil data produk, melakukan request `POST` untuk proses autentikasi dan registrasi, serta mengirim data form ketika menambahkan produk baru. Library HTTP memiliki kemampuan untuk menangani proses asynchronous, sehingga aplikasi tetap responsif selama proses pertukaran data dengan server berlangsung.
+<hr>
 
 ### Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
 Beberapa fungsi dari CookieRequest, yaitu:
@@ -32,6 +34,7 @@ Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter
 - Menciptakan single source of truth untuk autentikasi, memastikan bahwa semua komponen aplikasi mengakses data sesi yang sama dan konsisten
 - Menghindari pembuatan isntance baru di setiap komponen yang membutuhkan akses ke data sesi sehingga User tidak perlu melakukan autentikasi ulang ketika berpindah antar halaman atau menggunakan fitur yang berbeda
 - Menyederhanakan pengelolaan state aplikasi secara keseluruhan akrena perubahan langsung tercermin di seluruh aplikasi, mengurangi terjadinya inkonsistensi dalam autentikasi pengguna
+<hr>
 
 ### Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
 - User melakukan input data melalui widget dan data form disimpan dalam variabel
@@ -39,6 +42,7 @@ Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter
 - Data JSON dikirim ke endpoint Django. Kemudian, server menerima dan memproses data lalu server mengirim response JSON
 - Flutter menerima respons JSON. Lalu, data JSON di-decode menjadi objek Dart dan data dikonversi sesuai model yang dibuat
 - FutureBuilder digunakan untuk mengelola data asynchronous dan data ditampilkan melalui widget UI
+<hr>
 
 ### Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
 **Register**
@@ -57,6 +61,7 @@ Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter
 - User mengirimkan request logout melalui widget Flutter
 - Django menghapus sesi dan Flutter menghapus status login
 - User diarahkan ke halaman login
+<hr>
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
 
