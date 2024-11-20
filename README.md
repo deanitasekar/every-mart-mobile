@@ -10,9 +10,9 @@
 
 ### Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
 Kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON karena beberapa alasan, yaitu:
-- Standardisasi data
+- Standardisasi data <br>
   Ketika kita menerima atau mengirim data JSON, model berfungsi untuk memastikan bahwa struktur data selalu konsisten dan sesuai dengan ketentuan. Tanpa model, data akan menjadi rentan terhadap kesalahan format dan sulit untuk divalidasi.
-- Mempermudah konversi
+- Mempermudah konversi <br>
   JSON adalah format string yang memerlukan aprsing untuk dapat digunakan dalam aplikasi. Dengan adanya model, proses konversi antara JSON dan objek menjadi lebih mudah dan terstruktur. Hal ini tidak hanya meningkatkan efisiensi, tetapi juga mengurangi kesalahan manipulasi data. <br>
 Jika kita tidak membuat model terlebih dahulu, terdapat kemungkinan terjadi error. Aplikasi menjadi lebih rentan terhadap runtime error seperti `NoSuchMethodError` atau `TypeError`. Selain itu, proses debugging menjadi lebih sulit karena IDE tidak dapat memberikan warning tentang ketidaksesuaian tipe data atau properti yang hilang. Ketika aplikasi berkembang, pengelolaan data tanpa model menjadi semakin kompleks. <br>
 Meskipun ada situasi di mana kita tidak perlu membuat model terlebih dahulu, pengembangan tanpa model tidak direkomendasikan. Penggunaan model dapat meningkatkan maintainability, readability, dan reliability secara signifikan, serta membantu pengembangan aplikasi.
@@ -24,11 +24,11 @@ Library HTTP berperan penting untuk menghubungkan antara aplikasi Flutter dan ba
 
 ### Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
 Beberapa fungsi dari CookieRequest, yaitu:
-- Mengelola Cookie secara otomatis
+- Mengelola Cookie secara otomatis <br>
   `CookieRequest` menyimpan dan mengirimkan cookie yang diperlukan oleh Django untuk mengenali User yang sedang login
-- Mendukung operasi HTTP
+- Mendukung operasi HTTP <br>
   `CookieRequest` menyediakan beberapa metode yang memudahkan interaksi dengan server Django, seperti `login`, `logout`, dan `get`
-- Mendukung CSRF token Django
+- Mendukung CSRF token Django <br>
   `CookieRequest` menangani CSRF token secara otomatis untuk operasi `POST`, `PUT`, dan `DELETE`
 Instance `CookieRequest` perlu dibagikan ke seluruh komponen di aplikasi Flutter melalui `Provider` karena beberapa alasan, yaitu:
 - Menciptakan single source of truth untuk autentikasi, memastikan bahwa semua komponen aplikasi mengakses data sesi yang sama dan konsisten
