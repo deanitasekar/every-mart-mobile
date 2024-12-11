@@ -14,6 +14,7 @@ Kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSO
   Ketika kita menerima atau mengirim data JSON, model berfungsi untuk memastikan bahwa struktur data selalu konsisten dan sesuai dengan ketentuan. Tanpa model, data akan menjadi rentan terhadap kesalahan format dan sulit untuk divalidasi.
 - Mempermudah konversi <br>
   JSON adalah format string yang memerlukan aprsing untuk dapat digunakan dalam aplikasi. Dengan adanya model, proses konversi antara JSON dan objek menjadi lebih mudah dan terstruktur. Hal ini tidak hanya meningkatkan efisiensi, tetapi juga mengurangi kesalahan manipulasi data. <br>
+  
 Jika kita tidak membuat model terlebih dahulu, terdapat kemungkinan terjadi error. Aplikasi menjadi lebih rentan terhadap runtime error seperti `NoSuchMethodError` atau `TypeError`. Selain itu, proses debugging menjadi lebih sulit karena IDE tidak dapat memberikan warning tentang ketidaksesuaian tipe data atau properti yang hilang. Ketika aplikasi berkembang, pengelolaan data tanpa model menjadi semakin kompleks. <br>
 Meskipun ada situasi di mana kita tidak perlu membuat model terlebih dahulu, pengembangan tanpa model tidak direkomendasikan. Penggunaan model dapat meningkatkan maintainability, readability, dan reliability secara signifikan, serta membantu pengembangan aplikasi.
 <hr>
